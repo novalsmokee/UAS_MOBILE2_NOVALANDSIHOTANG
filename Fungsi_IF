@@ -1,0 +1,16 @@
+main(){
+  print("PROGRAM GRADE");
+  int nilai = 70;
+  String grade;
+  if(nilai >= 100) grade = "A+";
+  else if(nilai >= 90) grade = "A";
+  else if(nilai >= 80) grade = "B+";
+  else if(nilai >= 70) grade = "B";
+  else if(nilai >= 60) grade = "C+";
+  else if(nilai >= 50) grade = "C";
+  else if(nilai >= 40) grade = "D";
+  else if(nilai >= 30-0) grade = "E";
+  else grade = "F";
+  print("Grade: $grade");
+
+}
