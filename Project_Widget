@@ -1,0 +1,63 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(Myapp());
+
+class Myapp extends StatefulWidget {
+  _MyappState createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  //deklarasi variabel
+  final txtnamabunga = TextEditingController();
+  final txtjenisbunga = TextEditingController();
+  final txthargabunga = TextEditingController();
+  List<Widget> data = [];
+
+  onTambah() {
+    setState(() {
+      data.add(ListTile(
+        leading: Icon(Icons.circle),
+        title: Text(txtnamalagu.text),
+        subtitle: Text(txtjenislagu.text),
+        trailing: Text(txtdirilislagu.text),
+
+      ));
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: new Scaffold(
+          backgroundColor : Colors.redAccent,
+            appBar: new AppBar(title: Text("LAGU TERBARU 2021")),
+            body: new ListView(
+              children: <Widget>[
+                new Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      TextField(
+                        controller: txtnamalagu,
+                        decoration: InputDecoration(hintText: 'To The Bone'),
+                      ),
+                      TextField(
+                        controller: txtjenislagu,
+                        decoration: InputDecoration(hintText: 'Pop'),
+                      ),
+                      TextField(
+                        controller: txtdirilislagu,
+                        decoration: InputDecoration(hintText: '2019'),
+                      ),
+                      RaisedButton(child: Text("Tambah"), onPressed: onTambah),
+                    ],
+                  ),
+                ),
+                new Column(
+                  // Isi List View
+                  children: data,
+                )
+              ],
+            )));
+  }
+}
