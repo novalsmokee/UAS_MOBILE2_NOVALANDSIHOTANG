@@ -1,0 +1,136 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title : 'Routing Navigation',
+    initialRoute : '/',
+    routes : {
+      '/' : (context) => Menu(),
+      HalamanPertama.routeName : (context) => HalamanPertama(),
+      HalamanKedua.routeName : (context) => HalamanKedua(),
+      HalamanKetiga.routeName : (context) => HalamanKetiga(),
+ 
+    },
+  ));
+}
+
+class Menu extends StatelessWidget {
+  @override
+  Widget build (BuildContext context) {
+    return Scaffold(
+      appBar : AppBar(
+        title : Text ('UAS MOBILE2 NOVALAND SIHOTANG'),
+      ),
+      body : Center(
+        child : GridView.count(
+          crossAxisCount: 3,
+            children:<Widget>[RaisedButton(
+              child : Text ('DATA DIRI'),
+              onPressed: (){
+
+                Navigator.pushNamed(context, HalamanPertama.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('HOBI'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKedua.routeName);
+              },
+            ),
+            RaisedButton(
+              child : Text('NOMOR HP'),
+              onPressed : (){
+
+                Navigator.pushNamed(context, HalamanKetiga.routeName);
+              },
+            ),
+           
+              
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
+class HalamanPertama extends StatelessWidget {
+  static const String routeName = "/halamanPertama";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("DATA KELOMPOK"),
+      ),
+      body: Column(
+          children : <Widget>[
+            Text('NAMA        : NOVALAND SIHOTANG'),
+            Text('KELAS       : 6SIA10'),
+            Text('NIRM	  : 2018020801'),
+            Text('MATA KULIAH : MOBILE 2'), 
+            Text('DOSEN	  : Rico Imanta Ginting, S.Kom., M.Kom'), 
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class HalamanKedua extends StatelessWidget {
+  static const String routeName = "/halamanKedua";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("HOBI"),
+      ),
+      body: Column(
+          children : <Widget>[
+            Text('HOBI BERMAIN GAME'),
+            Text('HOBI DENGERIN MUSIK'),
+            Text('HOBI TRAVELING'), 
+            Text('HOBI MAKAN'),
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class HalamanKetiga extends StatelessWidget {
+  static const String routeName = "/halamanKetiga";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      appBar : AppBar(
+        title : Text("NOMOR HP"),
+      ),
+     body: Column(
+          children : <Widget>[
+            Text('Facebook  : NOVAL SIHOTANG'),
+            Text('Whatsapp : 081270338527'),
+
+          ]
+          
+        ),
+      
+    );
+  }
+}
+class  HalamanKeenam extends StatelessWidget {
+  static const String routeName = "/halamanKeenam";
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar : AppBar(
+        title : Text("Quotes Motivation"),
+      ),
+      body: Center(
+        child:Text('Halaman Keenam'),
+      ),
+    );
+  }
+}
